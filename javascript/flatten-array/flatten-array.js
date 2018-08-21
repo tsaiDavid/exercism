@@ -4,7 +4,7 @@ export default class Flattener {
   flatten(arr) {
     return arr.reduce((res, el) => {
       if (Array.isArray(el)) {
-        return res.concat(this.flatten(el));
+        return [...res, ...this.flatten(el)];
       }
 
       if (el === null || el === undefined) {
